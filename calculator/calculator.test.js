@@ -29,7 +29,6 @@ test("expect first arg to square the second arg regardless of if theres a third 
   expect(calculate("sq", 5, 11)).toBe(25);
 });
 
-//  * calculate('sq', 3, 44); // should return 9, as the 44 is ignored
 //  * calculate('%', 124, 56); // should throw an error since '%' is not a supported operator
 test("expect to return error", () => {
   // Wrap the function call inside an anonymous function
@@ -37,5 +36,30 @@ test("expect to return error", () => {
 });
 
 //  * calculate('🍕', -41414, 2); // should throw an error since '🍕' is not a supported operator
-//  * ```;
-//  */
+
+test("expect to throw error because unknown operate", () => {
+  expect(() => calculate('🍕', -41414, 2)).toThrow(Error);
+})
+
+test("Check sum operator works", () => {
+  expect(calculate("+", 3, 2)).toBe(5),
+  expect(calculate("+", 6, 4)).toBe(10),
+  expect(calculate("+", 9, 6)).toBe(15),
+  expect(calculate("+", 12, 8)).toBe(20),
+  expect(calculate("+", 15, 10)).toBe(25),
+  expect(calculate("+", 18, 12)).toBe(30),
+  expect(calculate("+", 21, 14)).toBe(35),
+  expect(calculate("+", 24, 16)).toBe(40),
+  expect(calculate("+", 27, 18)).toBe(45),
+  expect(calculate("+", 30, 20)).toBe(50),
+  expect(calculate("+", 33, 22)).toBe(55),
+  expect(calculate("+", 36, 24)).toBe(60),
+  expect(calculate("+", 39, 26)).toBe(65),
+  expect(calculate("+", 42, 28)).toBe(70),
+  expect(calculate("+", 45, 30)).toBe(75),
+  expect(calculate("+", 48, 32)).toBe(80),
+  expect(calculate("+", 51, 34)).toBe(85),
+  expect(calculate("+", 54, 36)).toBe(90),
+  expect(calculate("+", 57, 38)).toBe(95),
+  expect(calculate("+", 60, 40)).toBe(100)
+})
